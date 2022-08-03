@@ -33,6 +33,7 @@ Set the network info, start the partitioner
     bootp():/6.5.30/Overlay/disc1/stand/fx.64 -x
 
 Then input and output should be as follows:
+
     Setting $netaddr to 192.0.2.2 (from server )
     Obtaining /6.5.30/Overlay/disc1/stand/fx.64 from server
     2112+112288Setting $netaddr to 192.0.2.2 (from server )
@@ -127,7 +128,121 @@ Then input and output should be as follows:
     4) Recover System
     5) Enter Command Monitor
     
-    Option? 
+    Option? 2
+
+
+                         Installing System Software...
+
+                       Press <Esc> to return to the menu.
+
+
+
+    1) Remote Directory  X) Local CD-ROM  
+
+    Enter 1-2 to select source type, <esc> to quit,
+    or <enter> to start: 1
+
+
+    Enter the name of the remote host: 192.0.2.99
+    Enter the remote directory: 6.5.30/Overlay/disc1/dist
+
+
+    1)[Remote Directory]  X) Local CD-ROM  
+          *a) Remote directory 6.5.30/Overlay/disc1/dist from server 192.0.2.99.
+
+    Enter 1-2 to select source type, a to select the source, <esc> to quit,
+    or <enter> to start: 
+
+    [...]
+
+
+    Invoking software installation.
+
+    What is the hostname (system name) of your machine? octane2
+    What is the network address of octane2? 192.0.2.2                                                     
+    What is the netmask for 192.0.2.2?
+    Press Enter for the IP class default [0xffffff00]: 
+    Starting network with hostname: octane2, at ip address: 192.0.2.2
+
+    Default distribution to install from: 192.0.2.99:6.5.30/Overlay/disc1/dist
+
+    For help on inst commands, type "help overview".
+
+
+    Inst 4.1 Main Menu
+
+    1. from [source ...]            Specify location of software to be installed
+    2. open [source ...]            Specify additional software locations
+    3. close [source ...]           Close a software distribution location
+    4. list [keywords] [names]      Display information about software subsystems
+    5. go                           Perform software installation and removal now
+    6. install [keywords] [names]   Select subsystems to be installed
+    7. remove [keywords] [names]    Select subsystems to be removed
+    8. keep [keywords] [names]      Do not install or remove these subsystems
+    9. step [keywords] [names]      Interactive mode for install/remove/keep
+    10. conflicts [choice ...]       List or resolve installation conflicts
+    11. help [topic]                 Get help in general or on a specific word
+    12. view ...                     Go to the View Commands Menu
+    13. admin ...                    Go to the Administrative Commands Menu
+    14. quit                         Terminate software installation
+
+    Inst> admin load 192.0.2.99:selections
+
+Press `q` a few times to get through all the READMEs. Then
+
+    Select the maintenance stream if you simply want to maintain the
+    current hardware and software functions on your system.  The
+    maintenance stream insures compatibility of new hardware components.
+
+    Select the feature stream if you want to upgrade hardware and
+    software with new features.  Occasionally, the feature stream
+    introduces incompatibilities between old and new hardware components.
+
+    To change the stream selection between maintenance and feature,
+    reset the stream preference to the new setting.  In some cases,
+    resetting the stream preference and installing products from the
+    new stream requires reinstalling portions of the IRIX operating system.
+    -------------------------------------------------
+    1. Place me on the maintenance stream.
+    2. Place me on the feature stream.
+    3. Cancel
+    Please enter a choice [1]: 2
+    Reading product descriptions .. 100% Done.
+    WARNING: This software distribution is not meant to install on 
+    the version of IRIX currently running on this machine.  Sorry.
+
+
+    This distribution contains overlay products.  You may need to specify
+    additional distributions that contain the base software for these overlays.
+    If you do not load all the related distributions now, "Conflict" messages
+    later in the installation will prompt you to load any other necessary CDs.
+    (See the "overlay" help topic for more information.)
+
+    You can enter the name of a different distribution and press "Enter."
+
+    Or, enter "done" if you are ready to proceed with the installation now.
+
+    1 192.0.2.99:6.5.30/Overlay/capps/dist
+    2 192.0.2.99:6.5.30/Overlay/apps/dist
+    3 192.0.2.99:Development/devlibs/dist
+    4 192.0.2.99:Development/devfoundations/dist
+    5 192.0.2.99:Foundation/disc2/dist
+    6 192.0.2.99:Foundation/disc1/dist
+    7 192.0.2.99:6.5.30/Overlay/disc3/dist
+    8 192.0.2.99:6.5.30/Overlay/disc2/dist
+    9 192.0.2.99:6.5.30/Overlay/disc1/dist
+    10 done (distribution information read, return to inst prompt)
+
+    Install software from: [192.0.2.99:6.5.30/Overlay/capps/dist] done
+    Importing selections from 192.0.2.99:selections.
+
+    Inst> admin source 192.0.2.99:commands
+    return is not an item on this menu.
+    type ? or <Enter> to display menu
+
+    Inst> No conflicts
+
+And then installation should proceed
 
 
 
