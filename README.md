@@ -244,5 +244,5 @@ Press `q` a few times to get through all the READMEs. Then
 
 And then installation should proceed
 
-
+To set prom from command line, man nvram
 
