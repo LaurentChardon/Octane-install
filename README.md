@@ -50,8 +50,9 @@ Then input and output should be as follows:
     ----- please choose one (? for help, .. to quit this menu)-----
     [exi]t               [d]ebug/             [l]abel/
     [b]adblock/          [exe]rcise/          [r]epartition/
-    fx> r
-    
+```    
+fx> r
+```    
     ----- partitions-----
     part  type        blocks            Megabytes   (base+size)
       0: xfs     1052672 + 12288000     514 + 6000 
@@ -65,8 +66,10 @@ Then input and output should be as follows:
     
     ----- please choose one (? for help, .. to quit this menu)-----
     [ro]otdrive        [u]srrootdrive     [o]ptiondrive      [re]size
-    fx/repartition> ro
-    
+
+```
+fx/repartition> ro
+```    
     fx/repartition/rootdrive: type of data partition = (xfs) 
     Warning: you will need to re-install all software and restore user data
     from backups after changing the partition layout.  Changing partitions
@@ -84,8 +87,9 @@ Then input and output should be as follows:
     
     ----- please choose one (? for help, .. to quit this menu)-----
     [ro]otdrive        [u]srrootdrive     [o]ptiondrive      [re]size
-    fx/repartition> ..
-    
+```
+fx/repartition> ..
+```    
     ----- please choose one (? for help, .. to quit this menu)-----
     [exi]t               [d]ebug/             [l]abel/
     [b]adblock/          [exe]rcise/          [r]epartition/
@@ -95,8 +99,9 @@ Then input and output should be as follows:
     [b]utterfly            [seq]uential           [set]testpat
     [e]rrlog               [st]op_on_error        [sh]owtestpat
     [r]andom               [m]iscompares          [c]omplete
-    fx/exercise> c
-    
+```
+fx/exercise> c
+```    
      * * * * * W A R N I N G * * * * *
     about to destroy data on disk dksc(0,1,0)! ok? y
     sequential pass 1: scanning [0, 71687370] (71687370 blocks) 
@@ -111,8 +116,9 @@ Then input and output should be as follows:
     [b]utterfly            [seq]uential           [set]testpat
     [e]rrlog               [st]op_on_error        [sh]owtestpat
     [r]andom               [m]iscompares          [c]omplete
-    fx/exercise> ..
-    
+```
+fx/exercise> ..
+```    
     ----- please choose one (? for help, .. to quit this menu)----- 
     [exi]t             [d]ebug/           [l]abel/           [a]uto
     [b]adblock/        [exe]rcise/        [r]epartition/
@@ -128,8 +134,9 @@ Then input and output should be as follows:
     4) Recover System
     5) Enter Command Monitor
     
-    Option? 2
-
+```
+Option? 2
+```
 
                          Installing System Software...
 
@@ -140,19 +147,22 @@ Then input and output should be as follows:
     1) Remote Directory  X) Local CD-ROM  
 
     Enter 1-2 to select source type, <esc> to quit,
-    or <enter> to start: 1
+```
+or <enter> to start: 1
+```
 
-
-    Enter the name of the remote host: 192.0.2.99
-    Enter the remote directory: 6.5.30/Overlay/disc1/dist
-
+```
+Enter the name of the remote host: 192.0.2.99
+Enter the remote directory: 6.5.30/Overlay/disc1/dist
+```
 
     1)[Remote Directory]  X) Local CD-ROM  
           *a) Remote directory 6.5.30/Overlay/disc1/dist from server 192.0.2.99.
 
     Enter 1-2 to select source type, a to select the source, <esc> to quit,
-    or <enter> to start: 
-
+```
+or <enter> to start: 
+```
     [...]
 
 
@@ -186,8 +196,9 @@ Then input and output should be as follows:
     13. admin ...                    Go to the Administrative Commands Menu
     14. quit                         Terminate software installation
 
-    Inst> admin load 192.0.2.99:selections
-
+```
+Inst> admin load 192.0.2.99:selections
+```
 Press `q` a few times to get through all the READMEs. Then
 
     Select the maintenance stream if you simply want to maintain the
@@ -236,7 +247,9 @@ Press `q` a few times to get through all the READMEs. Then
     Install software from: [192.0.2.99:6.5.30/Overlay/capps/dist] done
     Importing selections from 192.0.2.99:selections.
 
-    Inst> admin source 192.0.2.99:commands
+```
+Inst> admin source 192.0.2.99:commands
+```
     return is not an item on this menu.
     type ? or <Enter> to display menu
 
