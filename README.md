@@ -40,9 +40,12 @@ Then input and output should be as follows:
     +27757+10880Setting $netaddr to 192.0.2.2 (from server )
      entry: 0xa80000005fd3f0f0
     SGI Version 6.5 ARCS BE64  Jul 20, 2006
-    fx: "device-name" = (dksc) 
-    fx: ctlr# = (0) 
-    fx: drive# = (1) 
+    
+````
+fx: "device-name" = (dksc) 
+fx: ctlr# = (0) 
+fx: drive# = (1) 
+````
     ...opening dksc(0,1,0)
     ...drive selftest...OK
     Scsi drive type == SEAGATE ST336706LC      010A
@@ -69,20 +72,21 @@ fx> r
 
 ```
 fx/repartition> ro
-```    
-    fx/repartition/rootdrive: type of data partition = (xfs) 
+fx/repartition/rootdrive: type of data partition = (xfs) 
+```
     Warning: you will need to re-install all software and restore user data
     from backups after changing the partition layout.  Changing partitions
     will cause all data on the drive to be lost.  Be sure you have the drive
-    backed up if it contains any user data.  Continue? y                                             
-    
+````
+backed up if it contains any user data.  Continue? y                                             
+````    
     ----- partitions-----
     part  type        blocks            Megabytes   (base+size)
       0: xfs      266240 + 71421130     130 + 34874
       1: raw        4096 + 262144         2 + 128  
       8: volhdr        0 + 4096           0 + 2    
      10: volume        0 + 71687370       0 + 35004
-    
+     
     capacity is 71687370 blocks
     
     ----- please choose one (? for help, .. to quit this menu)-----
@@ -122,10 +126,10 @@ fx/exercise> ..
     ----- please choose one (? for help, .. to quit this menu)----- 
     [exi]t             [d]ebug/           [l]abel/           [a]uto
     [b]adblock/        [exe]rcise/        [r]epartition/
-    fx> exi
-    
-    label info has changed for disk dksc(0,1,0).  write out changes? (yes) 
-
+```        
+fx> exi
+label info has changed for disk dksc(0,1,0).  write out changes? (yes) 
+```
     System Maintenance Menu
     
     1) Start System
@@ -163,6 +167,7 @@ Enter the remote directory: 6.5.30/Overlay/disc1/dist
 ```
 or <enter> to start: 
 ```
+At this stage, it's possible to get an error like `A 000: *** TLB Refill Exception on node 0`. This happens if performing an install through the serial console when the console is set to graphical. To fix, `setenv console d` at the monitor prompt. Don't forget to set it back after the install with `setenv console g`. 
     [...]
 
 
@@ -217,7 +222,9 @@ Press `q` a few times to get through all the READMEs. Then
     1. Place me on the maintenance stream.
     2. Place me on the feature stream.
     3. Cancel
-    Please enter a choice [1]: 2
+```
+Please enter a choice [1]: 2
+```
     Reading product descriptions .. 100% Done.
     WARNING: This software distribution is not meant to install on 
     the version of IRIX currently running on this machine.  Sorry.
@@ -244,7 +251,9 @@ Press `q` a few times to get through all the READMEs. Then
     9 192.0.2.99:6.5.30/Overlay/disc1/dist
     10 done (distribution information read, return to inst prompt)
 
-    Install software from: [192.0.2.99:6.5.30/Overlay/capps/dist] done
+```
+Install software from: [192.0.2.99:6.5.30/Overlay/capps/dist] done
+```
     Importing selections from 192.0.2.99:selections.
 
 ```
