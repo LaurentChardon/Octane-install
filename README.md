@@ -97,8 +97,9 @@ fx/repartition> ..
     ----- please choose one (? for help, .. to quit this menu)-----
     [exi]t               [d]ebug/             [l]abel/
     [b]adblock/          [exe]rcise/          [r]epartition/
-    fx> exe
-    
+```    
+fx> exe
+```    
     ----- please choose one (? for help, .. to quit this menu)-----
     [b]utterfly            [seq]uential           [set]testpat
     [e]rrlog               [st]op_on_error        [sh]owtestpat
@@ -167,12 +168,13 @@ Enter the remote directory: 6.5.30/Overlay/disc1/dist
 ```
 or <enter> to start: 
 ```
-At this stage, it's possible to get an error like `A 000: *** TLB Refill Exception on node 0`. This happens if performing an install through the serial console when the console is set to graphical. To fix, `setenv console d` at the monitor prompt. Don't forget to set it back after the install with `setenv console g`. 
+At this stage, it's possible to get an error like `A 000: *** TLB Refill Exception on node 0`. This happens when performing an install through the serial console when the console is set to graphical in the nvrom. To fix, `setenv console d` at the monitor prompt. Don't forget to set it back after the install with `setenv console g`.
+
     [...]
 
 
     Invoking software installation.
-
+```
     What is the hostname (system name) of your machine? octane2
     What is the network address of octane2? 192.0.2.2                                                     
     What is the netmask for 192.0.2.2?
@@ -180,7 +182,7 @@ At this stage, it's possible to get an error like `A 000: *** TLB Refill Excepti
     Starting network with hostname: octane2, at ip address: 192.0.2.2
 
     Default distribution to install from: 192.0.2.99:6.5.30/Overlay/disc1/dist
-
+```
     For help on inst commands, type "help overview".
 
 
