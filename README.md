@@ -1,9 +1,18 @@
 # Octane-install
-Notes on SGI Octane network installation of Irix 6.5.30 using [unxmaal's booterizer](https://github.com/unxmaal/booterizer) from the serial console.
+Notes on SGI Octane and Octane 2 network installation of Irix 6.5.30 using [unxmaal's booterizer](https://github.com/unxmaal/booterizer) from the serial console.
 These notes are to help myself remember all the steps. I make them public in case it helps someone, but they are not meant to cover all cases.
 
+## Clear PROM password (optional)
+Turn the Octane off and remove the main board. Change the configuration of the password jumper very near the CPU. The first boot will be very slow after changing the jumper configuration. 
+Turn on the Octane. Go into maintenance mode and enter the Command Prompt mode by entering 5. Type:
+
+    resetpw
+ 
+Shutdown the Octane and reset the password jumper to its initial position. 
+ 
+
 ## Format and test disks
-At the serial console prompt enter the Command Prompt mode by entering 5
+Turn on the Octane. At the serial console prompt enter the Command Prompt mode by entering 5
 
     
     
