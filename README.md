@@ -7,6 +7,8 @@ Turn the Octane off and remove the main board. Change the configuration of the p
 Turn on the Octane. Go into maintenance mode and enter the Command Prompt mode by entering 5. Type:
 
     resetpw
+    resetenv
+    setenv console d
  
 Shutdown the Octane and reset the password jumper to its initial position. 
  
@@ -179,9 +181,66 @@ or <enter> to start:
 ```
 At this stage, it's possible to get an error like `A 000: *** TLB Refill Exception on node 0`. This happens when performing an install through the serial console when the console is set to graphical in the nvrom. To fix, `setenv console d` at the monitor prompt. Don't forget to set it back after the install with `setenv console g`.
 
-    [...]
+    Setting $netaddr to 192.0.2.2 (from server )
+    Setting $netaddr to 192.0.2.2 (from server )
+    Setting $netaddr to 192.0.2.2 (from server )
+    Copying installation program to disk.
+    Setting $netaddr to 192.0.2.2 (from server )
+    ......... 10% ......... 20% ......... 30% ......... 40% ......... 50% 
+    ......... 60% ......... 70% ......... 80% ......... 90% ......... 100% 
+
+    Copy complete
+    Setting $netaddr to 192.0.2.2 (from server )
+    Setting $netaddr to 192.0.2.2 (from server )
+    IRIX Release 6.5 IP30 Version 07202013 System V - 64 Bit
+    Copyright 1987-2006 Silicon Graphics, Inc.
+    All Rights Reserved.
+
+    root on /hw/node/xtalk/15/pci/0/scsi_ctlr/0/target/1/lun/0/disk/partition/1/block ; dumpdev on /dev/swap ; boot swap file on /dev/swap swplo 81000
+    Creating miniroot devices, please wait...
+
+    Current system date is Tue Jan 10 03:57:10 PST 2023
+
+    Mounting file systems:
+
+    /dev/dsk/realroot: Invalid argument
+    No valid file system found on: /dev/dsk/realroot
+    This is your system disk: without it we have nothing
+    on which to install software.
 
 
+    Make new file system on /dev/dsk/realroot [yes/no/sh/help]: yes
+
+    About to remake (mkfs) file system on: /dev/dsk/realroot
+    This will destroy all data on disk partition: /dev/dsk/realroot.
+```
+            Are you sure? [y/n] (n): y
+```
+```
+            Block size of filesystem 512 or 4096 bytes? 512
+```
+Select the block size according to the typical file size. For the OS drive, and for development, 512 is good.
+
+    Doing: mkfs -b size=512 /dev/dsk/realroot
+    meta-data=/dev/rdsk/realroot     isize=256    agcount=16, agsize=4463820 blks
+             =                       sectsz=512   attr=0, parent=0
+    data     =                       bsize=512    blocks=71421120, imaxpct=25
+             =                       sunit=0      swidth=0 blks, unwritten=1
+             =                       mmr=0
+    naming   =version 2              bsize=4096   mixed-case=Y
+    log      =internal log           bsize=512    blocks=8718, version=1
+             =                       sectsz=512    sunit=0 blks, lazy-count=0
+    realtime =none                   extsz=65536  blocks=0, rtextents=0
+
+    Trying again to mount /dev/dsk/realroot on /root.
+
+    UX:make: INFO: `scsi' is up to date.
+    NOTICE: XVM mirrors enabled
+    NOTICE: XVM snapshot enabled
+    xvminit complete
+        /dev/miniroot            on  /
+        /dev/dsk/realroot        on  /root
+        
     Invoking software installation.
 ```
     What is the hostname (system name) of your machine? octane2
@@ -189,9 +248,9 @@ At this stage, it's possible to get an error like `A 000: *** TLB Refill Excepti
     What is the netmask for 192.0.2.2?
     Press Enter for the IP class default [0xffffff00]: 
     Starting network with hostname: octane2, at ip address: 192.0.2.2
-
-    Default distribution to install from: 192.0.2.99:6.5.30/Overlay/disc1/dist
 ```
+    Default distribution to install from: 192.0.2.99:6.5.30/Overlay/disc1/dist
+
     For help on inst commands, type "help overview".
 
 
@@ -217,6 +276,18 @@ Inst> admin load 192.0.2.99:selections
 ```
 Press `q` a few times to get through all the READMEs. Then
 
+    Select appropriate software stream to install.
+    -------------------------------------------------
+    Before you install an intermediate release, you must select
+    between two streams of installable software: the maintenance
+    stream, which contains accumulated bug fixes and any required software
+    for new hardware components; or the feature stream, which contains
+    accumulated bug fixes, any required software for new hardware
+    components, and new hardware and software features.  After your
+    selection, inst automatically identifies the modules in the stream
+    that you selected and loads them with no further prompting.
+    The currently loaded distributions contain maintenance and feature
+    stream products.
     Select the maintenance stream if you simply want to maintain the
     current hardware and software functions on your system.  The
     maintenance stream insures compatibility of new hardware components.
@@ -277,5 +348,10 @@ Inst> admin source 192.0.2.99:commands
 
 And then installation should proceed
 
-To set prom from command line, man nvram
+## Post install tips
+
+To set prom from OS command line, man nvram
+To set resolution from OS command line, man setmon
+Resolution can also be set with GUI util "Display Properties in menu bar"
+Resolution can also be set in PROM with `setenv monitor l` for 1024x768 resolution, or `setenv monitor h` for 1280x1024
 
