@@ -343,7 +343,8 @@ Inst> admin source 192.0.2.99:commands
 ```
     Inst> No conflicts
 
-And then installation should proceed
+And then installation should proceed  
+When done, reset the console to graphics mode
 
 ## Post install tips
 
