@@ -89,7 +89,7 @@ fx/repartition/rootdrive: type of data partition = (xfs)
     from backups after changing the partition layout.  Changing partitions
     will cause all data on the drive to be lost.  Be sure you have the drive
 ````
-backed up if it contains any user data.  Continue? y                                             
+backed up if it contains any user data.  Continue? y
 ````    
     ----- partitions-----
     part  type        blocks            Megabytes   (base+size)
@@ -244,7 +244,7 @@ Select the block size according to the typical file size. For the OS drive, and 
     Invoking software installation.
 ```
     What is the hostname (system name) of your machine? octane2
-    What is the network address of octane2? 192.0.2.2                                                     
+    What is the network address of octane2? 192.0.2.2
     What is the netmask for 192.0.2.2?
     Press Enter for the IP class default [0xffffff00]: 
     Starting network with hostname: octane2, at ip address: 192.0.2.2
@@ -341,17 +341,16 @@ Install software from: [192.0.2.99:6.5.30/Overlay/capps/dist] done
 ```
 Inst> admin source 192.0.2.99:commands
 ```
-    return is not an item on this menu.
-    type ? or <Enter> to display menu
-
     Inst> No conflicts
 
 And then installation should proceed
 
 ## Post install tips
 
-To set prom from OS command line, man nvram
-To set resolution from OS command line, man setmon
-Resolution can also be set with GUI util "Display Properties in menu bar"
-Resolution can also be set in PROM with `setenv monitor l` for 1024x768 resolution, or `setenv monitor h` for 1280x1024
+To set prom from OS command line, man nvram  
+To set resolution from OS command line, man setmon  
+Resolution can also be set with GUI util "Display Properties" in menu bar  
+Resolution can also be set in PROM with `setenv monitor l` for 1024x768 resolution, or `setenv monitor h` for 1280x1024  
+
+
 
