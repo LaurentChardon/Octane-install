@@ -348,10 +348,33 @@ When done, reset the console to graphics mode
 
 ## Post install tips
 
-To set prom from OS command line, man nvram  
-To set resolution from OS command line, man setmon  
+### Setting parameters in OS
+To set prom from OS command line, `man nvram`  
+
+### Setting resolution
+To set resolution from OS command line, `man setmon`  
 Resolution can also be set with GUI util "Display Properties" in menu bar  
 Resolution can also be set in PROM with `setenv monitor l` for 1024x768 resolution, or `setenv monitor h` for 1280x1024  
+
+### Boot problem
+If the machine won't boot, with the error
+
+    Autoboot failed.
+    xio(0)pci(15)scsi(0)disk(1)rdisk(0)partition(0): execute format error
+  
+Then check that the autoboot is configured properly
+    
+    printenv
+    ...
+    OSLoadFilename=/unix
+    OSLoader=sash
+
+If not, set it manually with `setenv`
+
+    setenv OSLoadFilename /unix
+    setenv OSLoader sash
+    
+    
 
 
 
