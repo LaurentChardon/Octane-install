@@ -65,6 +65,36 @@ fx: drive# = (1)
     [exi]t               [d]ebug/             [l]abel/
     [b]adblock/          [exe]rcise/          [r]epartition/
 ```    
+fx> exe
+```    
+    ----- please choose one (? for help, .. to quit this menu)-----
+    [b]utterfly            [seq]uential           [set]testpat
+    [e]rrlog               [st]op_on_error        [sh]owtestpat
+    [r]andom               [m]iscompares          [c]omplete
+```
+fx/exercise> c
+```    
+     * * * * * W A R N I N G * * * * *
+    about to destroy data on disk dksc(0,1,0)! ok? y
+    sequential pass 1: scanning [0, 71687370] (71687370 blocks) 
+    
+    0%..........10%..........20%..........30%..........40%..........50%..........
+    60%..........70%..........80%..........90%..........100%
+    butterfly pass 1: scanning [0, 71687370] (71687370 blocks)
+    0%..........10%..........20%..........30%..........40%..........50%..........
+    60%..........70%..........80%..........90%..........100%
+    
+    ----- please choose one (? for help, .. to quit this menu)-----
+    [b]utterfly            [seq]uential           [set]testpat
+    [e]rrlog               [st]op_on_error        [sh]owtestpat
+    [r]andom               [m]iscompares          [c]omplete
+```
+fx/exercise> ..
+```    
+    ----- please choose one (? for help, .. to quit this menu)----- 
+    [exi]t             [d]ebug/           [l]abel/           [a]uto
+    [b]adblock/        [exe]rcise/        [r]epartition/
+```    
 fx> r
 ```    
     ----- partitions-----
@@ -108,40 +138,10 @@ fx/repartition> ..
     ----- please choose one (? for help, .. to quit this menu)-----
     [exi]t               [d]ebug/             [l]abel/
     [b]adblock/          [exe]rcise/          [r]epartition/
-```    
-fx> exe
-```    
-    ----- please choose one (? for help, .. to quit this menu)-----
-    [b]utterfly            [seq]uential           [set]testpat
-    [e]rrlog               [st]op_on_error        [sh]owtestpat
-    [r]andom               [m]iscompares          [c]omplete
-```
-fx/exercise> c
-```    
-     * * * * * W A R N I N G * * * * *
-    about to destroy data on disk dksc(0,1,0)! ok? y
-    sequential pass 1: scanning [0, 71687370] (71687370 blocks) 
-    
-    0%..........10%..........20%..........30%..........40%..........50%..........
-    60%..........70%..........80%..........90%..........100%
-    butterfly pass 1: scanning [0, 71687370] (71687370 blocks)
-    0%..........10%..........20%..........30%..........40%..........50%..........
-    60%..........70%..........80%..........90%..........100%
-    
-    ----- please choose one (? for help, .. to quit this menu)-----
-    [b]utterfly            [seq]uential           [set]testpat
-    [e]rrlog               [st]op_on_error        [sh]owtestpat
-    [r]andom               [m]iscompares          [c]omplete
-```
-fx/exercise> ..
-```    
-    ----- please choose one (? for help, .. to quit this menu)----- 
-    [exi]t             [d]ebug/           [l]abel/           [a]uto
-    [b]adblock/        [exe]rcise/        [r]epartition/
-```        
-fx> exi
-label info has changed for disk dksc(0,1,0).  write out changes? (yes) 
-```
+
+    fx> exi
+    label info has changed for disk dksc(0,1,0).  write out changes? (yes) 
+
     System Maintenance Menu
     
     1) Start System
