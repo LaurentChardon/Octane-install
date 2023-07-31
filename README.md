@@ -1,5 +1,6 @@
 # Octane-install
-These are my notes on SGI Octane and Octane 2 network installation of Irix 6.5.30 using [unxmaal's booterizer](https://github.com/unxmaal/booterizer) from the serial console.
+These are my notes on SGI Octane and Octane 2 network installation of Irix 6.5.30 using [unxmaal's booterizer](https://github.com/unxmaal/booterizer) from the serial console. I ssh to the raspberry pi and use the `screen` command to interact with the Octane. The two are linked with a USB serial cable. Using the serial console allows me to copy and paste from these instructions to the Octane easily, instead of retyping everything (and potentially making mistakes).
+
 The notes are to help myself remember all the steps and commands. I make them public in case they may help someone, but they are not meant to cover all cases, SGI machines or Irix versions.
 
 ## Clear PROM password (optional)
@@ -8,6 +9,8 @@ Turn on the Octane. Go into maintenance mode and enter the Command Prompt mode b
 
     resetpw
     resetenv
+and, if you're using the serial console:
+
     setenv console d
  
 Shutdown the Octane and reset the password jumper to its initial position. 
@@ -64,6 +67,7 @@ fx: drive# = (1)
     ----- please choose one (? for help, .. to quit this menu)-----
     [exi]t               [d]ebug/             [l]abel/
     [b]adblock/          [exe]rcise/          [r]epartition/
+### Test the SCSI drive
 ```    
 fx> exe
 ```    
@@ -94,7 +98,8 @@ fx/exercise> ..
     ----- please choose one (? for help, .. to quit this menu)----- 
     [exi]t             [d]ebug/           [l]abel/           [a]uto
     [b]adblock/        [exe]rcise/        [r]epartition/
-```    
+### Partition the drive before installation
+```
 fx> r
 ```    
     ----- partitions-----
@@ -149,7 +154,7 @@ fx/repartition> ..
     3) Run Diagnostics
     4) Recover System
     5) Enter Command Monitor
-    
+### Install IRIX 
 ```
 Option? 2
 ```
